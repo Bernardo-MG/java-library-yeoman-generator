@@ -13,7 +13,7 @@ const ctx = {
   projectDescription: 'A generated sample library.',
   currentYear: '2026',
   developerId: 'dev',
-  developerName: 'Acme Developer',
+  developerName: 'Developer',
   developerMail: 'dev@somewhere.sample',
   developerUrl: 'https://github.com/dev',
   repoUserId: 'dev',
@@ -75,7 +75,10 @@ const required = [
   'src/site/site.xml',
   'src/site/markdown/index.md',
   'src/changes.xml',
-  'config/checkstyle/checkstyle.xml'
+  'src/config/checkstyle/checkstyle-rules.xml',
+   'src/config/pmd/pmd-rules.xml',
+   'src/config/spotbugs/spotbugs-exclude.xml',
+   'src/changes/changes.xml'
 ];
 
 for (const p of required) {
