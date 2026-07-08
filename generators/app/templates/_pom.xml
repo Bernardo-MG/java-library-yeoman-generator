@@ -8,14 +8,20 @@
    <!-- ****************** BASE POM ****************** -->
    <!-- ********************************************** -->
 
-   <groupId><%= groupId %></groupId>
-   <artifactId><%= artifactId %></artifactId>
-   <version><%= version %></version>
-   <packaging>jar</packaging>
+   <parent>
+      <groupId>com.bernardomg.maven</groupId>
+      <artifactId>base-pom</artifactId>
+      <version>1.5.13</version>
+   </parent>
 
    <!-- ********************************************** -->
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
+
+   <groupId><%= groupId %></groupId>
+   <artifactId><%= artifactId %></artifactId>
+   <version><%= version %></version>
+   <packaging>jar</packaging>
 
    <name><%= projectName %></name>
    <description><%= projectDescription %></description>
