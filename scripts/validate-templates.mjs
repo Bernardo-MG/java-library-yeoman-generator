@@ -9,7 +9,6 @@ const ctx = {
   artifactId: 'sample-library',
   version: '0.0.1-SNAPSHOT',
   package: 'com.sample.library',
-  packageInPathFormat: 'com/sample/library',
   projectName: 'Sample Library',
   projectDescription: 'A generated sample library.',
   currentYear: '2026',
