@@ -8,6 +8,7 @@ const ctx = {
   groupId: 'com.sample',
   artifactId: 'sample-library',
   version: '0.0.1-SNAPSHOT',
+  releaseVersion: '0.0.1',
   package: 'com.sample.library',
   projectName: 'Sample Library',
   projectDescription: 'A generated sample library.',

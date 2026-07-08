@@ -5,7 +5,7 @@
         <author email="<%= developerMail %>"><%= developerName %></author>
     </properties>
     <body>
-        <release version="<%= version %>" date="2025-01-01" description="First release">
+        <release version="<%= releaseVersion %>" date="<%= currentYear %>-01-01" description="First release">
             <action dev="<%= developerId %>" type="add">
                 First release of the library.
             </action>

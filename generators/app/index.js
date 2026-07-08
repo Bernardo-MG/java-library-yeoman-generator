@@ -7,6 +7,7 @@ const toClassName = (artifactId) => artifactId
   .filter(Boolean)
   .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
   .join('') || 'Library';
+const toReleaseVersion = (version) => version.replace(/-SNAPSHOT$/i, '');
 
 export default class LibraryMavenGenerator extends Generator {
   async prompting() {
@@ -97,7 +98,8 @@ export default class LibraryMavenGenerator extends Generator {
   writing() {
     const context = {
       ...this.answers,
-      packagePath: toPackagePath(this.answers.package)
+      packagePath: toPackagePath(this.answers.package),
+      releaseVersion: toReleaseVersion(this.answers.version)
     };
 
     this.fs.copyTpl(
