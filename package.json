@@ -1,0 +1,31 @@
+{
+  "name": "generator-library-maven",
+  "version": "0.1.0",
+  "description": "Yeoman generator to ease the creation of new Java libraries.",
+  "type": "module",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "java",
+    "maven",
+    "library"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "yeoman-generator": "^7.5.1",
+    "yosay": "^3.0.0"
+  },
+  "devDependencies": {
+    "yeoman-test": "^9.1.0"
+  },
+  "scripts": {
+    "check": "node --check generators/app/index.js",
+    "validate:templates": "node scripts/validate-templates.mjs",
+    "test": "npm run check && npm run validate:templates"
+  }
+}
