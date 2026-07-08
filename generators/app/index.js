@@ -114,19 +114,6 @@ export default class LibraryMavenGenerator extends Generator {
     this.fs.move(this.destinationPath('_github'), this.destinationPath('.github'));
     this.fs.move(this.destinationPath('_readme.md'), this.destinationPath('readme.md'));
     this.fs.move(this.destinationPath('_pom.xml'), this.destinationPath('pom.xml'));
-
-    this.fs.move(
-      this.destinationPath('src/main/java/__package__/MainClass.java'),
-      this.destinationPath(`src/main/java/${context.packagePath}/${context.mainClass}.java`)
-    );
-    this.fs.move(
-      this.destinationPath('src/test/java/__package__/MainClassTest.java'),
-      this.destinationPath(`src/test/java/${context.packagePath}/${context.mainClass}Test.java`)
-    );
-    this.fs.move(
-      this.destinationPath('src/test/java/__package__/MainClassIT.java'),
-      this.destinationPath(`src/test/java/${context.packagePath}/${context.mainClass}IT.java`)
-    );
   }
 
   end() {
