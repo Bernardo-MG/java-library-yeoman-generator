@@ -97,8 +97,7 @@ export default class LibraryMavenGenerator extends Generator {
   writing() {
     const context = {
       ...this.answers,
-      packagePath: toPackagePath(this.answers.package),
-      mainClass: toClassName(this.answers.artifactId)
+      packagePath: toPackagePath(this.answers.package)
     };
 
     this.fs.copyTpl(
@@ -108,6 +107,16 @@ export default class LibraryMavenGenerator extends Generator {
       {},
       { globOptions: { dot: true } }
     );
+
+	this.fs.move(
+	  this.destinationPath('src/main/java/__package__/**'),
+	  this.destinationPath(`src/main/java/${context.packagePath}`)
+	);
+
+	this.fs.move(
+	  this.destinationPath('src/test/java/__package__/**'),
+	  this.destinationPath(`src/test/java/${context.packagePath}`)
+	);
 
     this.fs.move(this.destinationPath('_gitignore'), this.destinationPath('.gitignore'));
     this.fs.move(this.destinationPath('_gitattributes'), this.destinationPath('.gitattributes'));

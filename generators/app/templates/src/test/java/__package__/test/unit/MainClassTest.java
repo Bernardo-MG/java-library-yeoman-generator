@@ -1,13 +1,15 @@
-package <%= package %>;
+package <%= package %>.test.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class <%= mainClass %>Test {
+import <%= package %>.MainClass;
+
+class MainClassTest {
 
     @Test
     void returnsProjectName() {
-        assertEquals("<%= projectName %>", <%= mainClass %>.projectName());
+        assertEquals("<%= projectName %>", MainClass.projectName());
     }
 }

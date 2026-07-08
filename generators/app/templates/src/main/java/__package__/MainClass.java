@@ -3,9 +3,9 @@ package <%= package %>;
 /**
  * Placeholder entry point for the <%= projectName %> library.
  */
-public final class <%= mainClass %> {
+public final class MainClass {
 
-    private <%= mainClass %>() {
+    private MainClass() {
         throw new UnsupportedOperationException("Utility class");
     }
 
