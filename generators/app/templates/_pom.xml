@@ -19,7 +19,7 @@
 
    <name><%= projectName %></name>
    <description><%= projectDescription %></description>
-   <url><%= repoUrl %></url>
+   <url>https://github.com/<%= repoUserId %>/<%= artifactId %></url>
    <inceptionYear><%= currentYear %></inceptionYear>
 
    <licenses>
@@ -35,20 +35,20 @@
    <!-- ********************************************** -->
 
    <scm>
-      <connection>scm:git:<%= repoUrl %>.git</connection>
-      <developerConnection>scm:git:<%= repoUrl %>.git</developerConnection>
+      <connection>scm:git:https://github.com/<%= repoUserId %>/<%= artifactId %>.git</connection>
+      <developerConnection>scm:git:https://github.com/<%= repoUserId %>/<%= artifactId %>.git</developerConnection>
       <tag>HEAD</tag>
-      <url><%= repoUrl %></url>
+      <url>https://github.com/<%= repoUserId %>/<%= artifactId %></url>
    </scm>
 
    <issueManagement>
       <system>GitHub</system>
-      <url><%= repoUrl %>/issues</url>
+      <url>https://github.com/<%= repoUserId %>/<%= artifactId %>/issues</url>
    </issueManagement>
 
    <ciManagement>
       <system>GitHub Actions</system>
-      <url><%= repoUrl %>/actions</url>
+      <url>https://github.com/<%= repoUserId %>/<%= artifactId %>/actions</url>
    </ciManagement>
 
    <!-- ********************************************** -->
@@ -177,8 +177,8 @@
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
       <site.skin.version>2.4.1</site.skin.version>
-      <mavenURL>https://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
-      <githubArtifactURL><![CDATA[https://github.com/${repoUserId}?tab=packages&amp;repo_name={project.artifactId}]]></githubArtifactURL>
+      <mavenURL>https://mvnrepository.com/artifact/<%= groupId %>/<%= artifactId %></mavenURL>
+      <githubArtifactURL><![CDATA[https://github.com/<%= repoUserId %>?tab=packages&amp;repo_name=<%= artifactId %>]]></githubArtifactURL>
    </properties>
 
    <!-- ********************************************** -->

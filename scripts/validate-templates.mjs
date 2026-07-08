@@ -19,8 +19,7 @@ const ctx = {
   repoUserId: 'acme',
   javaVersion: '11',
   packagePath: 'com/acme/sample',
-  mainClass: 'SampleLibrary',
-  repoUrl: 'https://github.com/acme/sample-library'
+  mainClass: 'SampleLibrary'
 };
 
 function render(template) {

@@ -98,8 +98,7 @@ export default class LibraryMavenGenerator extends Generator {
     const context = {
       ...this.answers,
       packagePath: toPackagePath(this.answers.package),
-      mainClass: toClassName(this.answers.artifactId),
-      repoUrl: `https://github.com/${this.answers.repoUserId}/${this.answers.artifactId}`
+      mainClass: toClassName(this.answers.artifactId)
     };
 
     this.fs.copyTpl(
