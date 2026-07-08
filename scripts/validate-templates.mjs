@@ -5,20 +5,21 @@ import assert from 'node:assert/strict';
 const root = path.resolve('generators/app/templates');
 const out = path.resolve('validation-output/sample-library');
 const ctx = {
-  groupId: 'com.acme',
+  groupId: 'com.sample',
   artifactId: 'sample-library',
   version: '0.0.1-SNAPSHOT',
-  package: 'com.acme.sample',
+  package: 'com.sample.library',
+  packageInPathFormat: 'com/sample/library',
   projectName: 'Sample Library',
   projectDescription: 'A generated sample library.',
   currentYear: '2026',
-  developerId: 'acme',
+  developerId: 'dev',
   developerName: 'Acme Developer',
-  developerMail: 'dev@acme.example',
-  developerUrl: 'https://github.com/acme',
-  repoUserId: 'acme',
+  developerMail: 'dev@somewhere.sample',
+  developerUrl: 'https://github.com/dev',
+  repoUserId: 'dev',
   javaVersion: '11',
-  packagePath: 'com/acme/sample',
+  packagePath: 'com/sample/library',
   mainClass: 'SampleLibrary'
 };
 
@@ -69,9 +70,9 @@ const required = [
   '.gitattributes',
   '.github/workflows/ci.yml',
   '.github/workflows/release.yml',
-  'src/main/java/com/acme/sample/SampleLibrary.java',
-  'src/test/java/com/acme/sample/SampleLibraryTest.java',
-  'src/test/java/com/acme/sample/SampleLibraryIT.java',
+  'src/main/java/com/sample/library/SampleLibrary.java',
+  'src/test/java/com/sample/library/SampleLibraryTest.java',
+  'src/test/java/com/sample/library/SampleLibraryIT.java',
   'src/site/site.xml',
   'src/site/markdown/index.md',
   'src/changes.xml',
@@ -83,13 +84,13 @@ for (const p of required) {
 }
 
 const pom = fs.readFileSync(path.join(out, 'pom.xml'), 'utf8');
-assert.ok(pom.includes('<groupId>com.acme</groupId>'));
+assert.ok(pom.includes('<groupId>com.sample</groupId>'));
 assert.ok(pom.includes('<artifactId>sample-library</artifactId>'));
-assert.ok(pom.includes('https://github.com/acme/sample-library'));
+assert.ok(pom.includes('https://github.com/dev/sample-library'));
 assert.ok(!pom.includes('<%='), 'Unrendered EJS marker in pom.xml');
 
-const java = fs.readFileSync(path.join(out, 'src/main/java/com/acme/sample/SampleLibrary.java'), 'utf8');
-assert.ok(java.includes('package com.acme.sample;'));
+const java = fs.readFileSync(path.join(out, 'src/main/java/com/sample/library/SampleLibrary.java'), 'utf8');
+assert.ok(java.includes('package com.sample.library;'));
 assert.ok(java.includes('public final class SampleLibrary'));
 
 console.log(`Validated generated sample at ${out}`);
