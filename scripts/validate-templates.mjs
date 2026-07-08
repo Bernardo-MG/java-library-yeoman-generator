@@ -19,8 +19,7 @@ const ctx = {
   developerUrl: 'https://github.com/dev',
   repoUserId: 'dev',
   javaVersion: '11',
-  packagePath: 'com/sample/library',
-  mainClass: 'SampleLibrary'
+  packagePath: 'com/sample/library'
 };
 
 function render(template) {
@@ -50,9 +49,8 @@ for (const [from, to] of [
   ['_gitignore', '.gitignore'],
   ['_gitattributes', '.gitattributes'],
   ['_github', '.github'],
-  ['src/main/java/__package__/MainClass.java', `src/main/java/${ctx.packagePath}/${ctx.mainClass}.java`],
-  ['src/test/java/__package__/test/unit/MainClassTest.java', `src/test/java/${ctx.packagePath}/test/unit/${ctx.mainClass}Test.java`],
-  ['src/test/java/__package__/test/integration/MainClassIT.java', `src/test/java/${ctx.packagePath}/test/integration/${ctx.mainClass}IT.java`]
+  ['src/main/java/__package__', `src/main/java/${ctx.packagePath}`],
+  ['src/test/java/__package__', `src/test/java/${ctx.packagePath}`]
 ]) {
   fs.mkdirSync(path.dirname(path.join(out, to)), { recursive: true });
   fs.renameSync(path.join(out, from), path.join(out, to));
@@ -70,9 +68,9 @@ const required = [
   '.gitattributes',
   '.github/workflows/ci.yml',
   '.github/workflows/release.yml',
-  'src/main/java/com/sample/library/SampleLibrary.java',
-  'src/test/java/com/sample/library/test/unit/SampleLibraryTest.java',
-  'src/test/java/com/sample/library/test/integration/SampleLibraryIT.java',
+  'src/main/java/com/sample/library/MainClass.java',
+  'src/test/java/com/sample/library/test/unit/MainClassTest.java',
+  'src/test/java/com/sample/library/test/integration/MainClassIT.java',
   'src/site/site.xml',
   'src/site/markdown/index.md',
   'src/changes.xml',
@@ -92,8 +90,8 @@ assert.ok(pom.includes('<artifactId>sample-library</artifactId>'));
 assert.ok(pom.includes('https://github.com/dev/sample-library'));
 assert.ok(!pom.includes('<%='), 'Unrendered EJS marker in pom.xml');
 
-const java = fs.readFileSync(path.join(out, 'src/main/java/com/sample/library/SampleLibrary.java'), 'utf8');
+const java = fs.readFileSync(path.join(out, 'src/main/java/com/sample/library/MainClass.java'), 'utf8');
 assert.ok(java.includes('package com.sample.library;'));
-assert.ok(java.includes('public final class SampleLibrary'));
+assert.ok(java.includes('public final class MainClass'));
 
 console.log(`Validated generated sample at ${out}`);
