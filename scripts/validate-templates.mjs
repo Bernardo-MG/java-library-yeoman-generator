@@ -51,8 +51,8 @@ for (const [from, to] of [
   ['_gitattributes', '.gitattributes'],
   ['_github', '.github'],
   ['src/main/java/__package__/MainClass.java', `src/main/java/${ctx.packagePath}/${ctx.mainClass}.java`],
-  ['src/test/java/__package__/MainClassTest.java', `src/test/java/${ctx.packagePath}/${ctx.mainClass}Test.java`],
-  ['src/test/java/__package__/MainClassIT.java', `src/test/java/${ctx.packagePath}/${ctx.mainClass}IT.java`]
+  ['src/test/java/__package__/test/unit/MainClassTest.java', `src/test/java/${ctx.packagePath}/test/unit/${ctx.mainClass}Test.java`],
+  ['src/test/java/__package__/test/integration/MainClassIT.java', `src/test/java/${ctx.packagePath}/test/integration/${ctx.mainClass}IT.java`]
 ]) {
   fs.mkdirSync(path.dirname(path.join(out, to)), { recursive: true });
   fs.renameSync(path.join(out, from), path.join(out, to));
@@ -71,8 +71,8 @@ const required = [
   '.github/workflows/ci.yml',
   '.github/workflows/release.yml',
   'src/main/java/com/sample/library/SampleLibrary.java',
-  'src/test/java/com/sample/library/SampleLibraryTest.java',
-  'src/test/java/com/sample/library/SampleLibraryIT.java',
+  'src/test/java/com/sample/library/test/unit/SampleLibraryTest.java',
+  'src/test/java/com/sample/library/test/integration/SampleLibraryIT.java',
   'src/site/site.xml',
   'src/site/markdown/index.md',
   'src/changes.xml',
