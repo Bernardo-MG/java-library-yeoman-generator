@@ -47,7 +47,7 @@ export default class LibraryMavenGenerator extends Generator {
         type: 'input',
         name: 'projectDescription',
         message: 'Project description',
-        default: 'A Maven project created from the library archetype.'
+        default: 'A Maven project created from the maven library Yeoman generator.'
       },
       {
         type: 'input',

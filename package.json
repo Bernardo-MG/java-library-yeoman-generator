@@ -1,7 +1,7 @@
 {
   "name": "generator-library-maven",
   "version": "0.1.0",
-  "description": "Yeoman generator equivalent to Bernardo-MG/library-maven-archetype for Java Maven libraries.",
+  "description": "Yeoman generator to ease the creation of new Java libraries.",
   "type": "module",
   "files": [
     "generators"
@@ -10,8 +10,7 @@
     "yeoman-generator",
     "java",
     "maven",
-    "library",
-    "archetype"
+    "library"
   ],
   "license": "MIT",
   "engines": {
