@@ -12,7 +12,7 @@ Before beginning with the new project there are a few things which should be edi
 
 Note that the Maven site is using the [Docs Maven Skin](https://github.com/Bernardo-MG/docs-maven-skin), which will have a few configuration requirements of its own.
 
-[![Maven Central](https://img.shields.io/maven-central/v/${groupId}/${artifactId}.svg)][maven-repo]
+[![Maven Central](https://img.shields.io/maven-central/v/<%= groupId %>/<%= artifactId %>.svg)][maven-repo]
 
 ## Features
 
@@ -59,7 +59,7 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
-[maven-repo]: https://mvnrepository.com/artifact/${groupId}/${artifactId}
-[issues]: https://github.com/${repoUserId}/${artifactId}/issues
+[maven-repo]: https://mvnrepository.com/artifact/<%= groupId %>/<%= artifactId %>
+[issues]: https://github.com/<%= repoUserId %>/<%= artifactId %>/issues
 [license]: https://www.opensource.org/licenses/mit-license.php
-[scm]: https://github.com/${repoUserId}/${artifactId}
+[scm]: https://github.com/<%= repoUserId %>/<%= artifactId %>
